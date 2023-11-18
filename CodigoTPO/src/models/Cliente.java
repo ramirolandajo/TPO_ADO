@@ -21,8 +21,10 @@ public class Cliente extends Usuario {
     }
 
     public void reservarHabitacion(Habitacion habitacion) {
+
     }
     public void abonarReserva() {
     }
+
 
 }
