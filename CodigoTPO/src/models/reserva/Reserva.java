@@ -1,6 +1,7 @@
 package models.reserva;
 
 import models.Cliente;
+import models.Observer;
 import models.habitacion.Habitacion;
 import models.pagos.MedioDePago;
 import models.Sujeto;
@@ -20,6 +21,7 @@ public class Reserva extends Sujeto {
     private MedioDePago medioDePago;
     private List<Observer> observers;
     private boolean pagada;
+
     public void notificar() {
 
     }

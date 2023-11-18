@@ -1,4 +1,4 @@
-package adapters;
+package adapters.interfaces;
 
 public interface AdapterMedioDePagoTCredito {
 
