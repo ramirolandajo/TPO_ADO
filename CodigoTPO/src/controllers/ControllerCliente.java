@@ -11,6 +11,7 @@ import models.pagos.TDebito;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ControllerCliente {
@@ -65,17 +66,20 @@ public class ControllerCliente {
         }
 
     }
-    public void ReservarHabitacion(String dni, String idHabitacion){
+    public void ReservarHabitacion(String dni, String idHabitacion,Date fechaRealizacion
+            , Date fehcaIngreso, Date fechaSalida){
         ControllerHabitacion controllerHabitacion = ControllerHabitacion.getInstancia();
         ControllerReserva controllerReserva = ControllerReserva.getInstancia();
 
         Cliente c = BuscarCliente(dni);
 
-        Habitacion h = controllerHabitacion.BuscarHabitacion(idHabitacion);//xd?
+        Habitacion h = controllerHabitacion.BuscarHabitacion(idHabitacion);
+        //para solucionar el error en bucsar habitacion me dice hacer privado
+        // el metodo solo para el paquete, no para la clase(?
         if(h != null && c != null){
             c.reservarHabitacion(h);
         }
-        //controllerReserva.CrearReserva(params);
+        controllerReserva.CrearReserva(h,c,fechaRealizacion,fehcaIngreso,fechaSalida);
 
     }
     public void AbonarReserva(String dni) throws IllegalAccessException {
