@@ -10,12 +10,11 @@ public class Cliente extends Usuario {
     private MedioDeComunicacion medioDeComunicacion;
     private MedioDePago medioDePago;
 
-    public Cliente(String nombre, String apellido, String dni, String mail, Reserva reserva, MedioDeComunicacion medioDeComunicacion, MedioDePago medioDePago) {
+    public Cliente(String nombre, String apellido, String dni, String mail, MedioDeComunicacion medioDeComunicacion, MedioDePago medioDePago) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.mail = mail;
-        this.reserva = reserva;
         this.medioDeComunicacion = medioDeComunicacion;
         this.medioDePago = medioDePago;
     }
@@ -26,5 +25,7 @@ public class Cliente extends Usuario {
     public void abonarReserva() {
     }
 
-
+    public boolean soyEseCliente(String dni){
+        return this.dni == dni;
+    }
 }
