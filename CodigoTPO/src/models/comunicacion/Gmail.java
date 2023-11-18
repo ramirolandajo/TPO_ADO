@@ -1,24 +1,15 @@
 package models.comunicacion;
 
-import java.util.*;
+import models.Observer;
 
-/**
- * 
- */
 public class Gmail implements MedioDeComunicacion, Observer {
-
-    /**
-     * Default constructor
-     */
-    public Gmail() {
-    }
-
-    /**
-     * @return
-     */
+    @Override
     public void actualizar() {
-        // TODO implement here
-        return null;
+
     }
 
+    @Override
+    public void enviarMensaje(String mensaje) {
+
+    }
 }

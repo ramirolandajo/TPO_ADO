@@ -1,8 +1,7 @@
 package models;
 
-
 public interface Observer {
 
-    public void actualizar();
+    void actualizar();
 
 }

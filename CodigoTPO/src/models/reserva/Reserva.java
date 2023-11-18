@@ -11,7 +11,6 @@ public class Reserva extends Sujeto {
     public Reserva() {
     }
     private String idReserva;
-
     private Habitacion habitacion;
     private Cliente cliente;
     private Date fechaRealizacion;

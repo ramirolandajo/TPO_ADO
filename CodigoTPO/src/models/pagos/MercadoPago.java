@@ -1,39 +1,11 @@
 package models.pagos;
 
-/**
- * 
- */
 public class MercadoPago implements MedioDePago {
-
-    /**
-     * Default constructor
-     */
-    public MercadoPago() {
-    }
-
-    /**
-     * 
-     */
     private String usuario;
-
-    /**
-     * 
-     */
     private float saldo;
 
-    /**
-     * @param total 
-     * @return
-     */
+    @Override
     public void abonarReserva(float total) {
-        // TODO implement here
-        return null;
+
     }
-
-    /**
-     * @param total 
-     * @return
-     */
-    public abstract void abonarReserva(float total);
-
 }

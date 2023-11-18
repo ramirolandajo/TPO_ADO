@@ -1,29 +1,9 @@
 package models.reserva;
 
-/**
- * 
- */
 public class FacturaA extends Factura {
-
-    /**
-     * Default constructor
-     */
-    public FacturaA() {
+    public FacturaA(int numeroFactura, String cuitCliente, float total) {
+        this.numeroFactura = numeroFactura;
+        this.cuitCliente = cuitCliente;
+        this.total = total;
     }
-
-    /**
-     * 
-     */
-    private int numeroFactura;
-
-    /**
-     * 
-     */
-    private String cuitCliente;
-
-    /**
-     * 
-     */
-    private float total;
-
 }

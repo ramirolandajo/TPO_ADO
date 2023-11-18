@@ -1,10 +1,5 @@
 package models.comunicacion;
 
-import java.util.*;
-
-/**
- * 
- */
 public interface MedioDeComunicacion {
-
+    void enviarMensaje(String mensaje);
 }

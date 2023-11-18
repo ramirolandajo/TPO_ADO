@@ -1,18 +1,7 @@
 package adapters;
 
-import java.util.*;
-
-/**
- * 
- */
 public interface AdapterMedioDePagoTrasnferencia {
 
-    /**
-     * @param cuentaCliente 
-     * @param cuentaHotel 
-     * @param total 
-     * @return
-     */
-    public abstract void abonarReserva(string cuentaCliente, String cuentaHotel, float total);
+    void abonarReserva(String cuentaCliente, String cuentaHotel, float total);
 
 }

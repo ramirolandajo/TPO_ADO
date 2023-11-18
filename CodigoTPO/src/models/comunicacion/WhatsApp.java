@@ -1,24 +1,16 @@
 package models.comunicacion;
 
-import java.util.*;
+import models.Observer;
 
-/**
- * 
- */
 public class WhatsApp implements MedioDeComunicacion, Observer {
 
-    /**
-     * Default constructor
-     */
-    public WhatsApp() {
-    }
-
-    /**
-     * @return
-     */
+    @Override
     public void actualizar() {
-        // TODO implement here
-        return null;
+
     }
 
+    @Override
+    public void enviarMensaje(String mensaje) {
+
+    }
 }

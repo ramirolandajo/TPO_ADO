@@ -1,10 +1,5 @@
 package adapters;
 
-import java.util.*;
-
-/**
- * 
- */
 public interface AdapterMedioComunicacion {
-
+    void enviarMensaje(String mensaje);
 }
