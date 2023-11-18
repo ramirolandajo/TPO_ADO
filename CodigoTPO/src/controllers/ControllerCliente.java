@@ -66,13 +66,15 @@ public class ControllerCliente {
 
     }
     public void ReservarHabitacion(String dni, String idHabitacion){
-        //ControllerHabitacion controllerHabitacion = controllerHabitacion.getInstancia();
+        ControllerHabitacion controllerHabitacion = ControllerHabitacion.getInstancia();
         ControllerReserva controllerReserva = ControllerReserva.getInstancia();
 
         Cliente c = BuscarCliente(dni);
 
-        //Habitacion h = controllerHabitacion.BuscarHabitacion(idHabitacion);
-        //if(h != null){c.reservarHabitacion(h);}
+        Habitacion h = controllerHabitacion.BuscarHabitacion(idHabitacion);//xd?
+        if(h != null && c != null){
+            c.reservarHabitacion(h);
+        }
         //controllerReserva.CrearReserva(params);
 
     }

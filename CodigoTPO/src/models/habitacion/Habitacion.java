@@ -38,4 +38,7 @@ public class Habitacion {
         }
         return total;
     }
+    public boolean soyEsaHabitacion(String idHabitacion){
+        return this.id == idHabitacion;
+    }
 }

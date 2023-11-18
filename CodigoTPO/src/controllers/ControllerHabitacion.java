@@ -6,10 +6,28 @@ import java.util.*;
 
 public class ControllerHabitacion {
 
+    private List<Habitacion> listadoHabitaciones = new ArrayList<>();
+
+    private static ControllerHabitacion instancia;
     public ControllerHabitacion() {
         
     }
+    public static  ControllerHabitacion getInstancia(){
+        if (instancia == null){
+            return instancia = new ControllerHabitacion();
+        }else {
+            return instancia;
+        }
+    }
 
-    private List<Habitacion> habitaciones;
+    private Habitacion BuscarHabitacion(String id){
+        for (Habitacion h :
+                listadoHabitaciones) {
+            if (h.soyEsaHabitacion(id)) {
+                return h;
+            }
+        }
+        return null;
+    }
 
 }
