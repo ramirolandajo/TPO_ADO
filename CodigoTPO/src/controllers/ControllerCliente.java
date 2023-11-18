@@ -3,6 +3,7 @@ package controllers;
 import adapters.AdapterTDebito;
 import models.Cliente;
 import models.comunicacion.Gmail;
+import models.habitacion.Habitacion;
 import models.pagos.Efectivo;
 import models.pagos.MercadoPago;
 import models.pagos.TCredito;
@@ -62,6 +63,26 @@ public class ControllerCliente {
             System.out.println("Ya existe un cliente con ese nro de documento");
         }
 
+    }
+    public void ReservarHabitacion(String dni, String idHabitacion){
+        //ControllerHabitacion controllerHabitacion = controllerHabitacion.getInstancia();
+        ControllerReserva controllerReserva = ControllerReserva.getInstancia();
+
+        Cliente c = BuscarCliente(dni);
+
+        //Habitacion h = controllerHabitacion.BuscarHabitacion(idHabitacion);
+        //if(h != null){c.reservarHabitacion(h);}
+        //controllerReserva.CrearReserva(params);
+
+    }
+    public void AbonarReserva(String dni) throws IllegalAccessException {
+        Cliente c = BuscarCliente(dni);
+        if (c != null){
+            c.abonarReserva();
+        }else {
+            System.out.println("El cliente con dni " + dni + " " +
+                    "no se encuentra registrado");
+        }
     }
 
     private Cliente BuscarCliente(String dni){

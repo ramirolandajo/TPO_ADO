@@ -1,5 +1,7 @@
 package models;
 
+import controllers.ControllerCliente;
+import controllers.ControllerHabitacion;
 import models.comunicacion.MedioDeComunicacion;
 import models.pagos.MedioDePago;
 import models.habitacion.Habitacion;
@@ -20,6 +22,7 @@ public class Cliente extends Usuario {
     }
 
     public void reservarHabitacion(Habitacion habitacion) {
+        habitacion.actualizarEstado("reservada");//cambiar estado a boolean(?
 
     }
     public void abonarReserva() throws IllegalAccessException {
