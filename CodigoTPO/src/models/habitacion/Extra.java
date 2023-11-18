@@ -6,21 +6,14 @@ import java.util.*;
  * 
  */
 public abstract class Extra {
-
-    /**
-     * Default constructor
-     */
     public Extra() {
     }
 
-    /**
-     * 
-     */
-    private String idExtra;
+    protected String idExtra;
 
-    /**
-     * 
-     */
-    private float precio;
+    protected float precio;
 
+    public float getPrecio() {
+        return precio;
+    }
 }

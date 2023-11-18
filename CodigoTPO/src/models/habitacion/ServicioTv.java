@@ -4,11 +4,9 @@ package models.habitacion;
  * 
  */
 public class ServicioTv extends Extra {
-
-    /**
-     * Default constructor
-     */
     public ServicioTv() {
+        idExtra = "1";
+        precio = 200;
     }
 
 }

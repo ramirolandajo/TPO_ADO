@@ -3,12 +3,10 @@ package models.habitacion;
 /**
  * 
  */
-public class ServicioInternet extends Extra {
+public class ServicioInternet extends Extra{
 
-    /**
-     * Default constructor
-     */
     public ServicioInternet() {
+        idExtra = "1";
+        precio = 100;
     }
-
 }

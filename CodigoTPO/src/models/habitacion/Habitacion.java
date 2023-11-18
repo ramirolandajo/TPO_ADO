@@ -6,61 +6,36 @@ import java.util.*;
  * 
  */
 public class Habitacion {
-
-    /**
-     * Default constructor
-     */
-    public Habitacion() {
+    public Habitacion(HabitacionBuilder builder) {
+        this.id = builder.getId();
+        this.personas = builder.getPersonas();
+        this.tipo = builder.getEstado();
+        this.estado = builder.getEstado();
+        this.extras = builder.getExtras();
+        this.precio = builder.getPrecio();
     }
-
-    /**
-     * 
-     */
     private String id;
 
-    /**
-     * 
-     */
-    private int habitantes;
-
-    /**
-     * 
-     */
+    private int personas;
     private String tipo;
 
-    /**
-     * 
-     */
-    private boolean reservada;
+    private String estado;
+    private List<Extra> extras;
 
-    /**
-     * 
-     */
     private float precio;
 
-    /**
-     * @param estado 
-     * @return
-     */
-    public boolean actualizarEstado(String estado) {
-        // TODO implement here
-        return false;
-    }
 
-    /**
-     * @return
-     */
+    public void actualizarEstado(String estado) {
+        this.estado=estado;
+    }
     public boolean estaReservada() {
-        // TODO implement here
-        return false;
+        return estado=="reservada";
     }
-
-    /**
-     * @return
-     */
     public float obtenerTotal() {
-        // TODO implement here
-        return 0.0f;
+        float total = this.precio;
+        for (Extra e:extras) {
+            total +=e.getPrecio();
+        }
+        return total;
     }
-
 }
