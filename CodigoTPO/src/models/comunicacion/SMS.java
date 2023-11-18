@@ -1,23 +1,22 @@
-package logs;
+package models.comunicacion;
 
 import java.util.*;
 
 /**
  * 
  */
-public abstract class Area {
+public class SMS implements MedioDeComunicacion, Observer {
 
     /**
      * Default constructor
      */
-    public Area() {
+    public SMS() {
     }
 
     /**
-     * @param informacion 
      * @return
      */
-    public void procesarInformacion(String informacion) {
+    public void actualizar() {
         // TODO implement here
         return null;
     }

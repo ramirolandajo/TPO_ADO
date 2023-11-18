@@ -1,11 +1,11 @@
-package adapters;
+package models.pagos;
 
 import java.util.*;
 
 /**
  * 
  */
-public interface AdapterMedioDePagoMP {
+public interface MedioDePago {
 
     /**
      * @param total 

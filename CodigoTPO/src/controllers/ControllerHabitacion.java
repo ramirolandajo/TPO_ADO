@@ -1,3 +1,6 @@
+package controllers;
+
+import models.habitacion.Habitacion;
 
 import java.util.*;
 

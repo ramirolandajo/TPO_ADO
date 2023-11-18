@@ -1,15 +1,25 @@
-package adapters;
+package models.pagos;
 
 /**
  * 
  */
-public class AdapterMercadoPago implements AdapterMedioDePagoMP {
+public class MercadoPago implements MedioDePago {
 
     /**
      * Default constructor
      */
-    public AdapterMercadoPago() {
+    public MercadoPago() {
     }
+
+    /**
+     * 
+     */
+    private String usuario;
+
+    /**
+     * 
+     */
+    private float saldo;
 
     /**
      * @param total 

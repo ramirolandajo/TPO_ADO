@@ -1,14 +1,14 @@
-package adapters;
+package models.pagos;
 
 /**
  * 
  */
-public class AdapterMercadoPago implements AdapterMedioDePagoMP {
+public class Efectivo implements MedioDePago {
 
     /**
      * Default constructor
      */
-    public AdapterMercadoPago() {
+    public Efectivo() {
     }
 
     /**

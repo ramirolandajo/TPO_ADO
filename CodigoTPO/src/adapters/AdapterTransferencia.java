@@ -1,5 +1,4 @@
-
-import java.util.*;
+package adapters;
 
 /**
  * 
@@ -18,17 +17,9 @@ public class AdapterTransferencia implements AdapterMedioDePagoTrasnferencia {
      * @param total 
      * @return
      */
-    public void abonarReserva(string cuentaCliente, String cuentaHotel, float total) {
+    public void abonarReserva(String cuentaCliente, String cuentaHotel, float total) {
         // TODO implement here
         return null;
     }
-
-    /**
-     * @param cuentaCliente 
-     * @param cuentaHotel 
-     * @param total 
-     * @return
-     */
-    public abstract void abonarReserva(string cuentaCliente, String cuentaHotel, float total);
 
 }
