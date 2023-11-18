@@ -22,7 +22,9 @@ public class Cliente extends Usuario {
     public void reservarHabitacion(Habitacion habitacion) {
 
     }
-    public void abonarReserva() {
+    public void abonarReserva() throws IllegalAccessException {
+        float total = this.reserva.calcularTotal();
+        this.medioDePago.abonarReserva(total);
     }
 
     public boolean soyEseCliente(String dni){

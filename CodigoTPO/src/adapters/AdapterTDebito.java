@@ -5,7 +5,7 @@ import adapters.interfaces.AdapterMedioDePagoTDebito;
 public class AdapterTDebito implements AdapterMedioDePagoTDebito {
     private float saldo;
     @Override
-    public void abonarReserva(int nroTar, float total) {
+    public void abonarReserva(long nroTar, float total) {
         if (saldo - total >= 0) {
             saldo -= total;
             System.out.println("Se abono la reserva con exito. Saldo actualizado: " + saldo);
