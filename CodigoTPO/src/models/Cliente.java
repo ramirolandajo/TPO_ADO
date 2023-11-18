@@ -1,6 +1,6 @@
 package models;
 
-import controllers.ControllerCliente;
+
 import controllers.ControllerHabitacion;
 import models.comunicacion.MedioDeComunicacion;
 import models.pagos.MedioDePago;
@@ -30,6 +30,9 @@ public class Cliente extends Usuario {
         this.medioDePago.abonarReserva(total);
     }
 
+    public  MedioDePago obtenerMedioPago(){
+        return this.medioDePago;
+    }
     public boolean soyEseCliente(String dni){
         return this.dni == dni;
     }

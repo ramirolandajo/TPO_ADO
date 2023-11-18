@@ -9,9 +9,7 @@ import java.util.*;
 
 public class Reserva extends Sujeto {
 
-    public Reserva() {
-    }
-    private String idReserva;
+    private int idReserva;
     private Habitacion habitacion;
     private Cliente cliente;
     private Date fechaRealizacion;
@@ -21,6 +19,20 @@ public class Reserva extends Sujeto {
     private MedioDePago medioDePago;
     private List<Observer> observers;
     private boolean pagada;
+
+    public Reserva(int idReserva, Habitacion habitacion, Cliente cliente, Date fechaRealizacion, Date fechaIngreso,
+                   Date fechaSalida) {
+        this.idReserva = idReserva;
+        this.habitacion = habitacion;
+        this.cliente = cliente;
+        this.fechaRealizacion = fechaRealizacion;
+        this.fechaIngreso = fechaIngreso;
+        this.fechaSalida = fechaSalida;
+        this.total = 0;
+        this.medioDePago = cliente.obtenerMedioPago();
+        //observers?
+        this.pagada = false;
+    }
 
     public void notificar() {
 
@@ -43,5 +55,8 @@ public class Reserva extends Sujeto {
     public float calcularDescuento() {
         return 0.0f;
     }
+    public boolean soyEsaReserva(int idReservaParam){
 
+        return this.idReserva == idReservaParam;
+    }
 }

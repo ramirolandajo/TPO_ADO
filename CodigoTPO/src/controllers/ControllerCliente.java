@@ -58,6 +58,7 @@ public class ControllerCliente {
         Cliente cABuscar = BuscarCliente(dni);
         if (cABuscar != null){
             Cliente c = new Cliente(nombre,apellido,dni,mail, new Gmail(), null);
+            listadoClientes.add(c);
         }else {
             //deberia haber una excepcion...
             System.out.println("Ya existe un cliente con ese nro de documento");
