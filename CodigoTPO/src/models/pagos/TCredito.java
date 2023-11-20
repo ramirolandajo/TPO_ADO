@@ -3,11 +3,12 @@ package models.pagos;
 import adapters.AdapterTCredito;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class TCredito extends Tarjeta {
     private AdapterTCredito adapterTCredito;
 
-    public TCredito(String titular, int numero, int codigoSeguridad, LocalDate vencimiento, float limite) {
+    public TCredito(String titular, int numero, int codigoSeguridad, Date vencimiento, float limite) {
         this.titular = titular;
         this.numero = numero;
         this.codigoSeguridad = codigoSeguridad;
