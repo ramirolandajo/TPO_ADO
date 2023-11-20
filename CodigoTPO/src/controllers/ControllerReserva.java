@@ -5,6 +5,7 @@ import models.habitacion.Habitacion;
 import models.reserva.Reserva;
 import models.reserva.TipoFactura;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,8 +26,8 @@ public class ControllerReserva {
             return instancia;
         }
     }
-    public void CrearReserva( Habitacion habitacion, Cliente cliente,
-                             Date fechaRealizacion, Date fehcaIngreso, Date fechaSalida){
+    public void CrearReserva(Habitacion habitacion, Cliente cliente,
+                             LocalDate fechaRealizacion, LocalDate fehcaIngreso, LocalDate fechaSalida){
         Reserva r = new Reserva(1,habitacion,cliente,fechaRealizacion,fehcaIngreso,fechaSalida);
         listadoReservas.add(r);
     }

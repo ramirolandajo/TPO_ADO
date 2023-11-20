@@ -52,8 +52,8 @@ public class Habitacion {
     public boolean estaReservada() {
         return estado=="reservada";
     }
-    public float obtenerTotal() {
-        float total = this.precio;
+    public float obtenerTotalExtras() {
+        float total = 0;
         for (Extra e:extras) {
             total +=e.getPrecio();
         }

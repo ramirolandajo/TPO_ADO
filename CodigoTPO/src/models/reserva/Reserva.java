@@ -5,6 +5,9 @@ import models.Observer;
 import models.habitacion.Habitacion;
 import models.pagos.MedioDePago;
 import models.Sujeto;
+
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 public class Reserva extends Sujeto {
@@ -12,16 +15,16 @@ public class Reserva extends Sujeto {
     private int idReserva;
     private Habitacion habitacion;
     private Cliente cliente;
-    private Date fechaRealizacion;
-    private Date fechaIngreso;
-    private Date fechaSalida;
+    private LocalDate fechaRealizacion;
+    private LocalDate fechaIngreso;
+    private LocalDate fechaSalida;
     private float total;
     private MedioDePago medioDePago;
     private List<Observer> observers;
     private Estado estadoReserva;
 
-    public Reserva(int idReserva, Habitacion habitacion, Cliente cliente, Date fechaRealizacion, Date fechaIngreso,
-                   Date fechaSalida) {
+    public Reserva(int idReserva, Habitacion habitacion, Cliente cliente, LocalDate fechaRealizacion, LocalDate fechaIngreso,
+                   LocalDate fechaSalida) {
         this.idReserva = idReserva;
         this.habitacion = habitacion;
         this.cliente = cliente;
@@ -60,10 +63,21 @@ public class Reserva extends Sujeto {
         this.estadoReserva = estado;
     }
     public float calcularTotal() {
-        return 0.0f;
+        this.total += this.habitacion.obtenerTotalExtras();
+        this.total += this.calcularDescuento();
+        return this.total;
     }
     public float calcularDescuento() {
-        return 0.0f;
+        float totalDescuento = 0;
+        long diferenciaFechas = ChronoUnit.DAYS.between(this.fechaRealizacion, this.fechaIngreso);
+        if (diferenciaFechas <= 15){
+            totalDescuento += (this.habitacion.getPrecio())-(this.habitacion.getPrecio() * 15) / 100;
+        } else if (diferenciaFechas >= 58) {
+            totalDescuento += (this.habitacion.getPrecio()) + (this.habitacion.getPrecio() * 20)/ 100;
+        }else{
+            totalDescuento = this.habitacion.getPrecio();
+        }
+        return totalDescuento;
     }
     public boolean soyEsaReserva(int idReservaParam){
 
