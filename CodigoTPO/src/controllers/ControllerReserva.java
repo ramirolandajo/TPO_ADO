@@ -3,6 +3,7 @@ package controllers;
 import models.Cliente;
 import models.habitacion.Habitacion;
 import models.reserva.Reserva;
+import models.reserva.TipoFactura;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,6 +29,13 @@ public class ControllerReserva {
                              Date fechaRealizacion, Date fehcaIngreso, Date fechaSalida){
         Reserva r = new Reserva(1,habitacion,cliente,fechaRealizacion,fehcaIngreso,fechaSalida);
         listadoReservas.add(r);
+    }
+    public void GenerarFactura(TipoFactura tipo, int idReserva){
+        Reserva r = BuscarReserva(idReserva);
+        if(r != null){
+            r.calcularTotal();
+            r.generarFactura(tipo);
+        }
     }
     private Reserva BuscarReserva(int idReserva){
         for (Reserva r :

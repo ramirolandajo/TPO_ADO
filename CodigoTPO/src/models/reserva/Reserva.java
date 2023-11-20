@@ -45,8 +45,16 @@ public class Reserva extends Sujeto {
     public void quitarObservador(Observer observer) {
         this.observers.remove(observer);
     }
-    public void generarFactura() {
-
+    public void generarFactura(TipoFactura tipo) {
+        if (tipo == TipoFactura.A){
+            Factura f = new FacturaA(this.cliente.obtenerDni(),this.total);
+        } else if (tipo == TipoFactura.B) {
+            Factura f = new FacturaB(this.cliente.obtenerDni(),this.total);
+        } else if (tipo == TipoFactura.C) {
+            Factura f = new FacturaC(this.cliente.obtenerDni(),this.total);
+        }else {
+            System.out.println("El tipo de factura ingresado no es valido");
+        }
     }
     public void actualizarEstado(Estado estado) {
         this.estadoReserva = estado;

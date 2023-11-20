@@ -1,7 +1,7 @@
 package models.reserva;
 public class FacturaC extends Factura {
-    public FacturaC(int numeroFactura, String cuitCliente, float total) {
-        this.numeroFactura = numeroFactura;
+    public FacturaC(String cuitCliente, float total) {
+        this.numeroFactura = 234567890;
         this.cuitCliente = cuitCliente;
         this.total = total;
     }
