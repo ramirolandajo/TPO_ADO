@@ -11,11 +11,10 @@ public class Log implements Observer {
     private List<Area> areas;
 
     @Override
-    public void actualizar() {
-
+    public void actualizar(String mensaje) {
+        enviarInformacion(mensaje);
     }
     public void enviarInformacion(String informacion) {
-
+        System.out.println(informacion);
     }
-
 }

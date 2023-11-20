@@ -12,8 +12,8 @@ public class WhatsApp implements MedioDeComunicacion, Observer {
     }
 
     @Override
-    public void actualizar() {
-
+    public void actualizar(String mensaje) {
+        this.enviarMensaje(mensaje);
     }
 
     @Override

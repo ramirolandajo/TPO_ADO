@@ -18,7 +18,7 @@ public class Reserva extends Sujeto {
     private float total;
     private MedioDePago medioDePago;
     private List<Observer> observers;
-    private boolean pagada;
+    private Estado estadoReserva;
 
     public Reserva(int idReserva, Habitacion habitacion, Cliente cliente, Date fechaRealizacion, Date fechaIngreso,
                    Date fechaSalida) {
@@ -31,23 +31,25 @@ public class Reserva extends Sujeto {
         this.total = 0;
         this.medioDePago = cliente.obtenerMedioPago();
         //observers?
-        this.pagada = false;
+        this.estadoReserva = Estado.REGISTRADA;
     }
 
-    public void notificar() {
-
+    public void notificar(String mensaje) {
+        for(Observer ob : observers){
+            ob.actualizar(mensaje);
+        }
     }
-    public void agregarObservador() {
-
+    public void agregarObservador(Observer observer) {
+        this.observers.add(observer);
     }
-    public void quitarObservador() {
-
+    public void quitarObservador(Observer observer) {
+        this.observers.remove(observer);
     }
     public void generarFactura() {
 
     }
-    public void actualizarEstado() {
-
+    public void actualizarEstado(Estado estado) {
+        this.estadoReserva = estado;
     }
     public float calcularTotal() {
         return 0.0f;
@@ -59,4 +61,5 @@ public class Reserva extends Sujeto {
 
         return this.idReserva == idReservaParam;
     }
+
 }

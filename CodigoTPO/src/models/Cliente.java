@@ -7,6 +7,8 @@ import models.pagos.MedioDePago;
 import models.habitacion.Habitacion;
 import models.reserva.Reserva;
 
+import java.util.List;
+
 public class Cliente extends Usuario {
     private Reserva reserva;
     private MedioDeComunicacion medioDeComunicacion;
@@ -33,6 +35,7 @@ public class Cliente extends Usuario {
     public  MedioDePago obtenerMedioPago(){
         return this.medioDePago;
     }
+
     public boolean soyEseCliente(String dni){
         return this.dni == dni;
     }
