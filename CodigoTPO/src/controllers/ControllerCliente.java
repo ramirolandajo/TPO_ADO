@@ -26,11 +26,11 @@ public class ControllerCliente {
 
          Cliente Cliente2 = new Cliente("Ramiro","Landajo","22333444",
                     "ramalandajo@gmail.com",new Gmail(),new TCredito("Ramiro Landajo",
-                 11223344,234, LocalDate.now(),200000));
+                 11223344,234, new Date(2028,04,14),200000));
 
          Cliente Cliente3 = new Cliente("Mateo","Rosello","33444555",
                  "mateorosello@gmail.com",new Gmail(),new TDebito(new AdapterTDebito(),"Mateo Rosello",
-                 22334455,754,LocalDate.of(2027,10,04),100000));
+                 22334455,754,new Date(2027,10,04),100000));
 
         Cliente Cliente4 = new Cliente("Valentin","Quiroga","44555666",
                 "valenquiroga@gmail.com",new Gmail(),new MercadoPago());
