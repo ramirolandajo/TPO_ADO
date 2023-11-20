@@ -45,7 +45,13 @@ public class Log implements Observer {
 
 
     @Override
-    public void actualizar() {
-
+    public void actualizar(String mensaje) {
+        enviarInformacion(mensaje);
     }
+<<<<<<< HEAD
+=======
+    public void enviarInformacion(String informacion) {
+        System.out.println(informacion);
+    }
+>>>>>>> 85ed1944338a684871d57119cb423fac9cabb0c7
 }

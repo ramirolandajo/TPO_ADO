@@ -1,15 +1,14 @@
 package models.habitacion;
 
-import java.util.List;
+public class FiltrarExtras extends FiltrosHabitacion{
 
-public class FiltroTipoHabitacion extends FiltrosHabitacion {
-    public FiltroTipoHabitacion(FiltrosHabitacion siguienteFiltro) {
+    public FiltrarExtras(FiltrosHabitacion siguienteFiltro) {
         super(siguienteFiltro);
     }
 
     @Override
     public boolean filtrarHabitacion(int cantidad, TipoHabitacion tipo, Extra extra, Habitacion habitacion) {
-        if(tipo!=null)
+        if(extra!=null)
             return tipo==habitacion.getTipo();
         else
             return this.siguienteFiltro.filtrarHabitacion(cantidad,tipo,extra,habitacion);

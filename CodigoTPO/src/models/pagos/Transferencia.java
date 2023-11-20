@@ -1,10 +1,12 @@
 package models.pagos;
 
+import adapters.AdapterTransferencia;
+
 public class Transferencia implements MedioDePago {
-    private String usuario;
-    private float saldo;
+    AdapterTransferencia adapterTransferencia;
+
     @Override
     public void abonarReserva(float total) {
-
+        adapterTransferencia.abonarReserva("Cuenta Hotel 1", total);
     }
 }

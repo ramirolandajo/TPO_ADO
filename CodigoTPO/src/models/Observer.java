@@ -1,7 +1,5 @@
 package models;
 
 public interface Observer {
-
-    void actualizar();
-
+    void actualizar(String mensaje);
 }

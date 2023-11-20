@@ -3,10 +3,10 @@ package models.pagos;
 import java.util.*;
 
 public abstract class Tarjeta implements MedioDePago {
-    private String titular;
-    private int numero;
-    private int codigoSeguridad;
-    private Date vencimiento;
+    protected String titular;
+    protected int numero;
+    protected int codigoSeguridad;
+    protected Date vencimiento;
 
     @Override
     public void abonarReserva(float total) throws IllegalAccessException {

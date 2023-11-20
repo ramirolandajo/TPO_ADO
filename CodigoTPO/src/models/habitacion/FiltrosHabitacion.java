@@ -1,6 +1,16 @@
 package models.habitacion;
 
+import java.util.List;
+
+
 public abstract class FiltrosHabitacion {
-    public abstract Habitacion filtrarHabitacion(int cantidad, String tipo);
+
+    protected FiltrosHabitacion siguienteFiltro;
+
+    public FiltrosHabitacion(FiltrosHabitacion siguienteFiltro) {
+        this.siguienteFiltro = siguienteFiltro;
+    }
+
+    public abstract boolean filtrarHabitacion(int cantidad, TipoHabitacion tipo, Extra extra,Habitacion habitacion );
 
 }
