@@ -1,5 +1,6 @@
 package models.habitacion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,7 +42,7 @@ public class HabitacionBuilder {
         return precio;
     }
 
-    private List<Extra> extras;
+    private List<Extra> extras = new ArrayList<>();
 
     private float precio;
 

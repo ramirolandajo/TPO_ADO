@@ -2,9 +2,6 @@ package models.habitacion;
 
 import java.util.*;
 
-/**
- * 
- */
 public class Habitacion {
     public Habitacion(HabitacionBuilder builder) {
         this.id = builder.getId();
@@ -15,6 +12,30 @@ public class Habitacion {
         this.precio = builder.getPrecio();
     }
     private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public int getPersonas() {
+        return personas;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public List<Extra> getExtras() {
+        return extras;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
 
     private int personas;
     private String tipo;
