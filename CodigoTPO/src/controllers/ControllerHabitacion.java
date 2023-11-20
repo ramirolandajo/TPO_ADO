@@ -5,7 +5,6 @@ import models.habitacion.Habitacion;
 import java.util.*;
 
 public class ControllerHabitacion {
-
     private List<Habitacion> listadoHabitaciones = new ArrayList<>();
 
     private static ControllerHabitacion instancia;
@@ -19,7 +18,9 @@ public class ControllerHabitacion {
             return instancia;
         }
     }
-
+    public List<Habitacion> getListadoHabitaciones() {
+        return listadoHabitaciones;
+    }
     Habitacion BuscarHabitacion(String id){
         for (Habitacion h :
                 listadoHabitaciones) {
