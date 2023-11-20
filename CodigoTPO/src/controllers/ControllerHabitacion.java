@@ -20,7 +20,7 @@ public class ControllerHabitacion {
         }
     }
 
-    private Habitacion BuscarHabitacion(String id){
+    Habitacion BuscarHabitacion(String id){
         for (Habitacion h :
                 listadoHabitaciones) {
             if (h.soyEsaHabitacion(id)) {

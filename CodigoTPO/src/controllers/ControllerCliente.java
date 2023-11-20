@@ -66,8 +66,8 @@ public class ControllerCliente {
         }
 
     }
-    public void ReservarHabitacion(String dni, String idHabitacion,Date fechaRealizacion
-            , Date fehcaIngreso, Date fechaSalida){
+    public void ReservarHabitacion(String dni, String idHabitacion,LocalDate fechaRealizacion
+            , LocalDate fehcaIngreso, LocalDate fechaSalida){
         ControllerHabitacion controllerHabitacion = ControllerHabitacion.getInstancia();
         ControllerReserva controllerReserva = ControllerReserva.getInstancia();
 
