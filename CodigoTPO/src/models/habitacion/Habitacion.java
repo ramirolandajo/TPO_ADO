@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Habitacion {
     public Habitacion(HabitacionBuilder builder) {
-        this.id = builder.getId();
+        this.id       = builder.getId();
         this.personas = builder.getPersonas();
-        this.tipo = builder.getEstado();
-        this.estado = builder.getEstado();
-        this.extras = builder.getExtras();
-        this.precio = builder.getPrecio();
+        this.tipo     = builder.getTipo();
+        this.estado   = builder.getEstado();
+        this.extras   = builder.getExtras();
+        this.precio   = builder.getPrecio();
     }
     private String id;
 
@@ -21,7 +21,7 @@ public class Habitacion {
         return personas;
     }
 
-    public String getTipo() {
+    public TipoHabitacion getTipo() {
         return tipo;
     }
 
@@ -38,7 +38,7 @@ public class Habitacion {
     }
 
     private int personas;
-    private String tipo;
+    private TipoHabitacion tipo;
 
     private String estado;
     private List<Extra> extras;

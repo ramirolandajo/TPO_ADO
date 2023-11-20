@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class HabitacionBuilder {
 
-    public HabitacionBuilder(String id,int personas,String tipo,float precio) {
+    public HabitacionBuilder(String id,int personas,TipoHabitacion tipo,float precio) {
         this.id = id;
         this.personas = personas;
         this.tipo = tipo;
@@ -17,7 +17,7 @@ public class HabitacionBuilder {
     }
     private String id;
     private int personas;
-    private String tipo;
+    private TipoHabitacion tipo;
     private String estado;
     public String getEstado() {
         return estado;
@@ -30,7 +30,7 @@ public class HabitacionBuilder {
         return personas;
     }
 
-    public String getTipo() {
+    public TipoHabitacion getTipo() {
         return tipo;
     }
 
