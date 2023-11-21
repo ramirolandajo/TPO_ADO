@@ -7,21 +7,16 @@ import java.util.List;
 
 public class ManejadorDeFiltros {
     private FiltrosHabitacion primerFiltro;
-    private List<Habitacion> encontradas = new ArrayList<>();
     private ControllerHabitacion controllerHabitacion = ControllerHabitacion.getInstancia();
     public ManejadorDeFiltros(FiltrosHabitacion primerFiltro) {
-        FiltrosHabitacion filtroTipoHab    = new FiltroTipoHabitacion(null);
-        FiltrosHabitacion filtroExtras     = new FiltrarExtras(filtroTipoHab);
+        FiltrosHabitacion filtroExtras    = new FiltrarExtras(null);
         FiltrosHabitacion filtroHuespuedes = new FiltroCantidadHuespedes(filtroExtras);
+        FiltrosHabitacion filtroTipoHab    = new FiltroTipoHabitacion(filtroHuespuedes);
         this.primerFiltro = filtroHuespuedes;
     }
 
-    public List<Habitacion> filtrarHabitacion(int cantidad, TipoHabitacion tipo,Extra extra, List<Habitacion> habitaciones){
-        for (Habitacion h: controllerHabitacion.getListadoHabitaciones()) {
-            if(this.primerFiltro.siguienteFiltro.filtrarHabitacion(cantidad,tipo,extra,h))
-                encontradas.add(h);
-        }
-        return encontradas;
+    public List<Habitacion> filtrarHabitacion(int cantidad, TipoHabitacion tipo,List<Extra> extra){
+        return primerFiltro.filtrarHabitacion(cantidad,tipo,extra,controllerHabitacion.getListadoHabitaciones());
     };
 
 }

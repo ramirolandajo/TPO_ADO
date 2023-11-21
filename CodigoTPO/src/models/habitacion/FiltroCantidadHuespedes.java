@@ -7,11 +7,17 @@ public class FiltroCantidadHuespedes extends FiltrosHabitacion {
     }
 
     @Override
-    public boolean filtrarHabitacion(int cantidad, TipoHabitacion tipo, Extra extra, Habitacion habitacion) {
+    public List<Habitacion> filtrarHabitacion(int cantidad, TipoHabitacion tipo, List<Extra> extra, List<Habitacion> habitaciones) {
         if(cantidad>0){
-            return habitacion.getPersonas()==cantidad;
-        }else
-            return this.siguienteFiltro.filtrarHabitacion(cantidad,tipo,extra,habitacion);
+            for (Habitacion h:habitaciones) {
+                if(cantidad>=h.getPersonas())
+                    encontradas.add(h);
+            }
+        }
+        if(siguienteFiltro!=null)
+            return this.siguienteFiltro.filtrarHabitacion(cantidad,tipo,extra,encontradas);
+        else
+            return encontradas;
     }
 
 }

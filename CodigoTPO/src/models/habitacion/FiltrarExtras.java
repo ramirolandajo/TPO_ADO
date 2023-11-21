@@ -1,5 +1,7 @@
 package models.habitacion;
 
+import java.util.List;
+
 public class FiltrarExtras extends FiltrosHabitacion{
 
     public FiltrarExtras(FiltrosHabitacion siguienteFiltro) {
@@ -7,11 +9,23 @@ public class FiltrarExtras extends FiltrosHabitacion{
     }
 
     @Override
-    public boolean filtrarHabitacion(int cantidad, TipoHabitacion tipo, Extra extra, Habitacion habitacion) {
-        if(extra!=null)
-            return tipo==habitacion.getTipo();
+    public List<Habitacion> filtrarHabitacion(int cantidad, TipoHabitacion tipo, List<Extra> extra, List<Habitacion> habitaciones) {
+        if(!extra.isEmpty()){
+            for (Habitacion h: habitaciones) {
+                boolean filtroExtras = true;
+                for(Extra e : extra){
+                    if(!h.getExtras().contains(e))
+                        filtroExtras = false;
+                }
+                if(filtroExtras)
+                    encontradas.add(h);
+            }
+        }
+        if(siguienteFiltro!=null)
+            return this.siguienteFiltro.filtrarHabitacion(cantidad,tipo,extra,encontradas);
         else
-            return this.siguienteFiltro.filtrarHabitacion(cantidad,tipo,extra,habitacion);
+            return encontradas;
+
     }
 
 }
