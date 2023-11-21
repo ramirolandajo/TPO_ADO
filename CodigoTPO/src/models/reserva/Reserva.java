@@ -1,5 +1,6 @@
 package models.reserva;
 
+import logs.Log;
 import models.Cliente;
 import models.Observer;
 import models.habitacion.Habitacion;
@@ -35,6 +36,8 @@ public class Reserva extends Sujeto {
         this.medioDePago = cliente.obtenerMedioPago();
         //observers?
         this.estadoReserva = Estado.REGISTRADA;
+        this.observers =  new ArrayList<>();
+        observers.add(new Log());
     }
 
     public void notificar(String mensaje) {

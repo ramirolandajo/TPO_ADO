@@ -25,9 +25,9 @@ public class Test {
         System.out.println("Habitacion ->" + r.getHabitacion().getId());
         System.out.println("Cliente -> " + r.getCliente().getDni());
         System.out.println("Fecha realizacion -> " + r.getFechaRealizacion());
-        System.out.println("Fecha ingreso ->" + r.getFechaIngreso());
-        System.out.println("Fecha salida ->" + r.getFechaSalida());
-        System.out.println("Total ->" + r.getTotal());
+        System.out.println("Fecha ingreso -> " + r.getFechaIngreso());
+        System.out.println("Fecha salida -> " + r.getFechaSalida());
+        System.out.println("Total -> " + r.getTotal());
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
