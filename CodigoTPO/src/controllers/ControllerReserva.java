@@ -30,7 +30,9 @@ public class ControllerReserva {
                              LocalDate fechaRealizacion, LocalDate fehcaIngreso, LocalDate fechaSalida){
         Reserva r = new Reserva(1,habitacion,cliente,fechaRealizacion,fehcaIngreso,fechaSalida);
         r.notificar("Se actualizo el estado de la reserva a " + r.getEstadoReserva());
+        cliente.setReserva(r);
         listadoReservas.add(r);
+        System.out.println("Se creo la reserva con id: " + r.getIdReserva());
     }
     public void GenerarFactura(TipoFactura tipo, int idReserva){
         Reserva r = BuscarReserva(idReserva);

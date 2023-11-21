@@ -11,6 +11,7 @@ public class AdapterMercadoPago implements AdapterMedioDePagoMP {
         this.saldo = saldo;
     }
 
+
     @Override
     public void abonarReserva(float total) {
         if (saldo - total >= 0) {

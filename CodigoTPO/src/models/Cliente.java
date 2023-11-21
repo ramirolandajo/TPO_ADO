@@ -5,6 +5,7 @@ import controllers.ControllerHabitacion;
 import models.comunicacion.MedioDeComunicacion;
 import models.pagos.MedioDePago;
 import models.habitacion.Habitacion;
+import models.reserva.Estado;
 import models.reserva.Reserva;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class Cliente extends Usuario {
     public void abonarReserva() throws IllegalAccessException {
         float total = this.reserva.calcularTotal();
         this.medioDePago.abonarReserva(total);
+        this.reserva.actualizarEstado(Estado.PAGADA);
     }
 
     public  MedioDePago obtenerMedioPago(){
@@ -53,5 +55,9 @@ public class Cliente extends Usuario {
 
     public MedioDePago getMedioDePago() {
         return medioDePago;
+    }
+
+    public void setReserva(Reserva reserva) {
+        this.reserva = reserva;
     }
 }

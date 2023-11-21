@@ -36,7 +36,7 @@ public class ControllerCliente {
                                  String mail){
         Cliente cABuscar = BuscarCliente(dni);
         if (cABuscar == null){
-            Cliente c = new Cliente(nombre,apellido,dni,mail, new Gmail(), null);
+            Cliente c = new Cliente(nombre,apellido,dni,mail, new Gmail(), new MercadoPago());
             listadoClientes.add(c);
             System.out.println("Cliente con dni: " + dni + " registrado con exito!");
         }else {
@@ -53,8 +53,6 @@ public class ControllerCliente {
         Cliente c = BuscarCliente(dni);
 
         Habitacion h = controllerHabitacion.BuscarHabitacion(idHabitacion);
-        //para solucionar el error en bucsar habitacion me dice hacer privado
-        // el metodo solo para el paquete, no para la clase(?
         if(h != null && c != null){
             c.reservarHabitacion(h);
         }

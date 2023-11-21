@@ -28,8 +28,9 @@ public class Test {
         System.out.println("Fecha ingreso -> " + r.getFechaIngreso());
         System.out.println("Fecha salida -> " + r.getFechaSalida());
         System.out.println("Total -> " + r.getTotal());
+        System.out.println("Estado -> " +  r.getEstadoReserva());
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
         Scanner sc = new Scanner(System.in);
 
         //generando instancias de los controllers
@@ -55,12 +56,18 @@ public class Test {
 
         //Haciendo reserva
         controllerCliente.ReservarHabitacion(cABuscar.obtenerDni(),"H1",
-                LocalDate.now(),LocalDate.of(2023,12,23),
+                LocalDate.now(),LocalDate.of(2023,11,24),
                 LocalDate.of(2024,1,5));
+        //Imprimiendo la reserva
         MostrarReserva(controllerReserva.getReserva(1));
         sc.nextLine();
 
+        //Actualizando el estado la reserva
+        controllerCliente.AbonarReserva("11222333");
+        MostrarReserva(controllerReserva.getReserva(1));
+        sc.nextLine();
 
+    System.out.println("-------------------------------------Fin del programa-------------------------------------");
 
     }
 }
