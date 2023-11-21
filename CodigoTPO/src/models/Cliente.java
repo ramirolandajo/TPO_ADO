@@ -36,7 +36,7 @@ public class Cliente extends Usuario {
         return this.medioDePago;
     }
     public boolean soyEseCliente(String dni){
-        return this.dni == dni;
+        return this.dni.equals(dni);
     }
 
     public String obtenerDni(){

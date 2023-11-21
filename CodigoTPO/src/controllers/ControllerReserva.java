@@ -39,6 +39,10 @@ public class ControllerReserva {
             r.generarFactura(tipo);
         }
     }
+    public Reserva getReserva(int id){
+        Reserva r = BuscarReserva(id);
+        return r;
+    }
     private Reserva BuscarReserva(int idReserva){
         for (Reserva r :
                 listadoReservas) {

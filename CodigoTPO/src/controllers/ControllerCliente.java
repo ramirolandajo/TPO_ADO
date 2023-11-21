@@ -16,12 +16,12 @@ import java.util.List;
 
 public class ControllerCliente {
 
-    private List<Cliente> listadoClientes = new ArrayList<>();
+    private List<Cliente> listadoClientes;
 
     private static ControllerCliente instancia;
 
     private ControllerCliente() {
-
+        this.listadoClientes = new ArrayList<>();
     }
 
     public static ControllerCliente getInstancia() {
@@ -35,9 +35,10 @@ public class ControllerCliente {
     public void RegistrarCliente(String nombre, String apellido, String dni,
                                  String mail){
         Cliente cABuscar = BuscarCliente(dni);
-        if (cABuscar != null){
+        if (cABuscar == null){
             Cliente c = new Cliente(nombre,apellido,dni,mail, new Gmail(), null);
             listadoClientes.add(c);
+            System.out.println("Cliente con dni: " + dni + " registrado con exito!");
         }else {
             //deberia haber una excepcion...
             System.out.println("Ya existe un cliente con ese nro de documento");

@@ -86,6 +86,38 @@ public class Reserva extends Sujeto {
         return estadoReserva;
     }
 
+    public int getIdReserva() {
+        return idReserva;
+    }
+
+    public Habitacion getHabitacion() {
+        return habitacion;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public LocalDate getFechaRealizacion() {
+        return fechaRealizacion;
+    }
+
+    public LocalDate getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public LocalDate getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public MedioDePago getMedioDePago() {
+        return medioDePago;
+    }
+
     public boolean soyEsaReserva(int idReservaParam){
 
         return this.idReserva == idReservaParam;
