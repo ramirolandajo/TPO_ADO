@@ -21,28 +21,6 @@ public class ControllerCliente {
     private static ControllerCliente instancia;
 
     private ControllerCliente() {
-         Cliente Cliente1 = new Cliente("Sebastian","Bernasconi","11222333",
-                 "bernaseba1@gmail.com",new Gmail(),new MercadoPago());
-
-         Cliente Cliente2 = new Cliente("Ramiro","Landajo","22333444",
-                    "ramalandajo@gmail.com",new Gmail(),new TCredito("Ramiro Landajo",
-                 11223344,234, new Date(2028,04,14),200000));
-
-         Cliente Cliente3 = new Cliente("Mateo","Rosello","33444555",
-                 "mateorosello@gmail.com",new Gmail(),new TDebito(new AdapterTDebito(),"Mateo Rosello",
-                 22334455,754,new Date(2027,10,04),100000));
-
-        Cliente Cliente4 = new Cliente("Valentin","Quiroga","44555666",
-                "valenquiroga@gmail.com",new Gmail(),new MercadoPago());
-
-        Cliente Cliente5 = new Cliente("Matias","Marano","55666777",
-                "matimarano@gmail.com",new Gmail(),new Efectivo());
-
-        Cliente Cliente6 = new Cliente("Ramiro","Landajo","66777888",
-                "ramalandajo@gmail.com",new Gmail(),new MercadoPago());
-
-        Cliente Cliente7 = new Cliente("Ivo","Bandoni","77888999",
-                "ivobandoni@gmail.com",new Gmail(),new Efectivo());
 
     }
 
@@ -90,6 +68,11 @@ public class ControllerCliente {
             System.out.println("El cliente con dni " + dni + " " +
                     "no se encuentra registrado");
         }
+    }
+    public Cliente getCliente(String dni){
+        Cliente c = BuscarCliente(dni);
+
+        return c;
     }
 
     private Cliente BuscarCliente(String dni){
