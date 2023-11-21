@@ -60,7 +60,9 @@ public class Reserva extends Sujeto {
         }
     }
     public void actualizarEstado(Estado estado) {
+
         this.estadoReserva = estado;
+        this.notificar("Se actualizo el estado de la reserva a " + estado);
     }
     public float calcularTotal() {
         this.total += this.habitacion.obtenerTotalExtras();
@@ -79,6 +81,11 @@ public class Reserva extends Sujeto {
         }
         return totalDescuento;
     }
+
+    public Estado getEstadoReserva() {
+        return estadoReserva;
+    }
+
     public boolean soyEsaReserva(int idReservaParam){
 
         return this.idReserva == idReservaParam;
