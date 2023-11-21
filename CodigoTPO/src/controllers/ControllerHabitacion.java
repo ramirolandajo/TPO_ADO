@@ -1,19 +1,18 @@
 package controllers;
 
+import models.habitacion.Extra;
 import models.habitacion.Habitacion;
-import models.habitacion.HabitacionBuilder;
+import models.habitacion.ManejadorDeFiltros;
 import models.habitacion.TipoHabitacion;
 
 import java.util.*;
 
 public class ControllerHabitacion {
     private List<Habitacion> listadoHabitaciones = new ArrayList<>();
-
+    private ManejadorDeFiltros manejadorDeFiltros = new ManejadorDeFiltros();
     private static ControllerHabitacion instancia;
     public ControllerHabitacion() {
-        Habitacion h = new HabitacionBuilder("H1",3, TipoHabitacion.HABITACION,200)
-                .asignarServicioInternet().getHabitacion();
-        listadoHabitaciones.add(h);
+        
     }
     public static  ControllerHabitacion getInstancia(){
         if (instancia == null){
@@ -22,13 +21,11 @@ public class ControllerHabitacion {
             return instancia;
         }
     }
+    public List<Habitacion> filtrarHabitaciones(int cantidad, TipoHabitacion tipo, List<Extra> extra){
+        return manejadorDeFiltros.filtrarHabitacion(cantidad,tipo,extra,listadoHabitaciones);
+    }
     public List<Habitacion> getListadoHabitaciones() {
         return listadoHabitaciones;
-    }
-
-    public Habitacion getHabitacion(String id){
-        Habitacion h = BuscarHabitacion(id);
-        return h;
     }
     Habitacion BuscarHabitacion(String id){
         for (Habitacion h :
