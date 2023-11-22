@@ -5,11 +5,12 @@ import models.habitacion.*;
 import java.util.*;
 
 public class ControllerHabitacion {
-    private List<Habitacion> listadoHabitaciones = new ArrayList<>();
-    private ManejadorDeFiltros manejadorDeFiltros = new ManejadorDeFiltros();
+    private List<Habitacion> listadoHabitaciones;
+    private ManejadorDeFiltros manejadorDeFiltros;
     private static ControllerHabitacion instancia;
     public ControllerHabitacion() {
-
+       this.listadoHabitaciones = new ArrayList<>();
+       this.manejadorDeFiltros = new ManejadorDeFiltros();
     }
     public static  ControllerHabitacion getInstancia(){
         if (instancia == null){

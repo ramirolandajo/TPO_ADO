@@ -4,10 +4,7 @@ import controllers.ControllerCliente;
 import controllers.ControllerHabitacion;
 import controllers.ControllerReserva;
 import models.Cliente;
-import models.habitacion.Extra;
-import models.habitacion.Habitacion;
-import models.habitacion.ServicioInternet;
-import models.habitacion.TipoHabitacion;
+import models.habitacion.*;
 import models.reserva.Reserva;
 import models.reserva.TipoFactura;
 
@@ -54,20 +51,39 @@ public class Test {
         ControllerHabitacion controllerHabitacion = ControllerHabitacion.getInstancia();
 
         //Iniciando Test Habitacion
-        List<Extra> serviciosAAgregar = new ArrayList<>();
+        List<Extra> serviciosHabitacion1 = new ArrayList<>();
         ServicioInternet servicioInternet = new ServicioInternet();
-        serviciosAAgregar.add(servicioInternet);
-        controllerHabitacion.crearHabitacion("H1",3,TipoHabitacion.HABITACION,200,serviciosAAgregar);
-        MostrarHabitacon(controllerHabitacion.getHabitacion("H1"));
+        ServicioDespertador servicioDespertador = new ServicioDespertador();
+        ServicioTv servicioTv = new ServicioTv();
+        ServicioMiniBar servicioMiniBar = new ServicioMiniBar();
 
+        serviciosHabitacion1.add(servicioInternet);
+
+        List<Extra> serviciosHabitacion2 = new ArrayList<>();
+        serviciosHabitacion2.add(servicioDespertador);
+        serviciosHabitacion2.add(servicioInternet);
+        serviciosHabitacion2.add(servicioTv);
+
+        controllerHabitacion.crearHabitacion("H1",3,TipoHabitacion.HABITACION,200,serviciosHabitacion1);
+        controllerHabitacion.crearHabitacion("H2",5,TipoHabitacion.HABITACION,200,serviciosHabitacion2);
+        MostrarHabitacon(controllerHabitacion.getHabitacion("H1"));
+        MostrarHabitacon(controllerHabitacion.getHabitacion("H2"));
+
+        //Iniciando Test Filtros
         List<Extra> extrasFiltro = new ArrayList<>();
-        ServicioInternet servicioFiltro= new ServicioInternet();
-        extrasFiltro.add(servicioFiltro);
-        List<Habitacion> habitacionesFiltradas = controllerHabitacion.filtrarHabitaciones(3, TipoHabitacion.HABITACION,extrasFiltro);
+        extrasFiltro.add(servicioDespertador);
+        extrasFiltro.add(servicioInternet);
+        extrasFiltro.add(servicioTv);
+        for (Habitacion h: controllerHabitacion.getListadoHabitaciones()) {
+            System.out.println(h.getId());
+        }
+
+        List<Habitacion> habitacionesFiltradas = controllerHabitacion.filtrarHabitaciones(5, TipoHabitacion.HABITACION,extrasFiltro);
+
+        System.out.println("Habitaciones que cumplen con el filtro");
         for (Habitacion h :
                 habitacionesFiltradas) {
             MostrarHabitacon(h);
-            System.out.println("a");
         }
         sc.nextLine();
 

@@ -7,8 +7,9 @@ import java.util.List;
 public abstract class FiltrosHabitacion {
 
     protected FiltrosHabitacion siguienteFiltro;
-    protected List<Habitacion> encontradas = new ArrayList<>();
+    protected List<Habitacion> encontradas;
     public FiltrosHabitacion(FiltrosHabitacion siguienteFiltro) {
+        this.encontradas = new ArrayList<>();
         this.siguienteFiltro = siguienteFiltro;
     }
 

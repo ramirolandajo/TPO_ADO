@@ -10,9 +10,10 @@ public class FiltroCantidadHuespedes extends FiltrosHabitacion {
     public List<Habitacion> filtrarHabitacion(int cantidad, TipoHabitacion tipo, List<Extra> extra, List<Habitacion> habitaciones) {
         if(cantidad>0){
             for (Habitacion h:habitaciones) {
-                if(cantidad>=h.getPersonas())
+                if(cantidad>=h.getPersonas()) {
                     encontradas.add(h);
-                System.out.println("cantidad");
+                    System.out.println("Habitacion agregada a filtro de cantidad de huespedes");
+                }
             }
         }
         if(siguienteFiltro!=null)

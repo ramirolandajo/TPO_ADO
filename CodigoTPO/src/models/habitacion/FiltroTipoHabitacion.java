@@ -13,8 +13,8 @@ public class FiltroTipoHabitacion extends FiltrosHabitacion {
             for (Habitacion h:habitaciones) {
                 if(h.getTipo()==tipo){
                     encontradas.add(h);
+                    System.out.println("Habitacion agregada a filtro de tipo de habitacion");
                 }
-                System.out.println("tipo");
             }
         }
         if(siguienteFiltro!=null)
@@ -22,5 +22,4 @@ public class FiltroTipoHabitacion extends FiltrosHabitacion {
         else
             return encontradas;
     }
-
 }
