@@ -4,10 +4,16 @@ import controllers.ControllerCliente;
 import controllers.ControllerHabitacion;
 import controllers.ControllerReserva;
 import models.Cliente;
+import models.habitacion.Extra;
+import models.habitacion.Habitacion;
+import models.habitacion.ServicioInternet;
+import models.habitacion.TipoHabitacion;
 import models.reserva.Reserva;
 import models.reserva.TipoFactura;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Test {
@@ -30,6 +36,14 @@ public class Test {
         System.out.println("Fecha salida -> " + r.getFechaSalida());
         System.out.println("Total -> " + r.getTotal());
         System.out.println("Estado -> " +  r.getEstadoReserva());
+    }
+    public static void MostrarHabitacon(Habitacion h){
+        System.out.println("id -> " + h.getId());
+        System.out.println("personas -> " + h.getPersonas());
+        System.out.println("Tipo -> " + h.getTipo());
+        System.out.println("Estado -> " + h.getEstado());
+        System.out.println("Extras -> " + h.getExtras());
+        System.out.println("Precio -> " + h.getPrecio());
     }
     public static void main(String[] args) throws IllegalAccessException {
         Scanner sc = new Scanner(System.in);
@@ -74,7 +88,24 @@ public class Test {
         //fin test cliente
 
         //inicio test Reserva
+        //solo queda esto por probar, el resto de los metodos se usan en conjunto con la clase cliente
         controllerReserva.GenerarFactura(TipoFactura.A,1);
+        sc.nextLine();
+
+        //Iniciando Test Habitacion
+
+
+        List<Extra> extrasFiltro = new ArrayList<>();
+        ServicioInternet servicioFiltro= new ServicioInternet();
+        extrasFiltro.add(servicioFiltro);
+        List<Habitacion> habitacionesFiltradas = controllerHabitacion.filtrarHabitaciones(3, TipoHabitacion.HABITACION,extrasFiltro);
+        for (Habitacion h :
+                habitacionesFiltradas) {
+            MostrarHabitacon(h);
+            System.out.println("a");
+        }
+        sc.nextLine();
+
 
     System.out.println("-------------------------------------Fin del programa-------------------------------------");
 
