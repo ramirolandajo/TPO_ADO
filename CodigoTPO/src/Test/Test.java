@@ -55,6 +55,10 @@ public class Test {
         sc.nextLine();
 
         //Haciendo reserva
+        /*
+        * Para que haga descuento: fecha inicio <= LocalDate.of(2023,11,24)
+        * Para que no haga descuento: fecha inicio = LocalDate.of(2023,12,24)
+        * Para que cobre recargo: fecha inicio >= LocalDate.of(2024,4,24)*/
         controllerCliente.ReservarHabitacion(cABuscar.obtenerDni(),"H1",
                 LocalDate.now(),LocalDate.of(2023,11,24),
                 LocalDate.of(2024,1,5));
