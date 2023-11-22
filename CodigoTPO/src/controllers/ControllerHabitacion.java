@@ -1,9 +1,6 @@
 package controllers;
 
-import models.habitacion.Extra;
-import models.habitacion.Habitacion;
-import models.habitacion.ManejadorDeFiltros;
-import models.habitacion.TipoHabitacion;
+import models.habitacion.*;
 
 import java.util.*;
 
@@ -12,7 +9,9 @@ public class ControllerHabitacion {
     private ManejadorDeFiltros manejadorDeFiltros = new ManejadorDeFiltros();
     private static ControllerHabitacion instancia;
     public ControllerHabitacion() {
-        
+        Habitacion h = new HabitacionBuilder("H1",3,TipoHabitacion.HABITACION,200)
+                .asignarServicioInternet().getHabitacion();
+        listadoHabitaciones.add(h);
     }
     public static  ControllerHabitacion getInstancia(){
         if (instancia == null){

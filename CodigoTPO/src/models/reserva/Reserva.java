@@ -54,10 +54,13 @@ public class Reserva extends Sujeto {
     public void generarFactura(TipoFactura tipo) {
         if (tipo == TipoFactura.A){
             Factura f = new FacturaA(this.cliente.obtenerDni(),this.total);
+            this.cliente.getMedioDeComunicacion().enviarMensaje("Nueva Factura de tipo " + tipo + " disponible");
         } else if (tipo == TipoFactura.B) {
             Factura f = new FacturaB(this.cliente.obtenerDni(),this.total);
+            this.cliente.getMedioDeComunicacion().enviarMensaje("Nueva Factura de tipo " + tipo + " disponible");
         } else if (tipo == TipoFactura.C) {
             Factura f = new FacturaC(this.cliente.obtenerDni(),this.total);
+            this.cliente.getMedioDeComunicacion().enviarMensaje("Nueva Factura de tipo " + tipo + " disponible");
         }else {
             System.out.println("El tipo de factura ingresado no es valido");
         }

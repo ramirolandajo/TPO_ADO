@@ -5,6 +5,7 @@ import controllers.ControllerHabitacion;
 import controllers.ControllerReserva;
 import models.Cliente;
 import models.reserva.Reserva;
+import models.reserva.TipoFactura;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -66,10 +67,14 @@ public class Test {
         MostrarReserva(controllerReserva.getReserva(1));
         sc.nextLine();
 
-        //Actualizando el estado la reserva
+        //Pagando reserva y actualizando el estado la reserva
         controllerCliente.AbonarReserva("11222333");
         MostrarReserva(controllerReserva.getReserva(1));
         sc.nextLine();
+        //fin test cliente
+
+        //inicio test Reserva
+        controllerReserva.GenerarFactura(TipoFactura.A,1);
 
     System.out.println("-------------------------------------Fin del programa-------------------------------------");
 
