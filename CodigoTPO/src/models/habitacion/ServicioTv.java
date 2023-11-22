@@ -9,4 +9,8 @@ public class ServicioTv extends Extra {
         precio = 200;
     }
 
+    @Override
+    public String toString() {
+        return "ServicioTv";
+    }
 }

@@ -42,8 +42,8 @@ public class Test {
         System.out.println("personas -> " + h.getPersonas());
         System.out.println("Tipo -> " + h.getTipo());
         System.out.println("Estado -> " + h.getEstado());
-        System.out.println("Extras -> " + h.getExtras());
         System.out.println("Precio -> " + h.getPrecio());
+        h.MostrarExtras();
     }
     public static void main(String[] args) throws IllegalAccessException {
         Scanner sc = new Scanner(System.in);
@@ -52,6 +52,24 @@ public class Test {
         ControllerCliente controllerCliente = ControllerCliente.getInstancia();
         ControllerReserva controllerReserva = ControllerReserva.getInstancia();
         ControllerHabitacion controllerHabitacion = ControllerHabitacion.getInstancia();
+
+        //Iniciando Test Habitacion
+        List<Extra> serviciosAAgregar = new ArrayList<>();
+        ServicioInternet servicioInternet = new ServicioInternet();
+        serviciosAAgregar.add(servicioInternet);
+        controllerHabitacion.crearHabitacion("H1",3,TipoHabitacion.HABITACION,200,serviciosAAgregar);
+        MostrarHabitacon(controllerHabitacion.getHabitacion("H1"));
+
+        List<Extra> extrasFiltro = new ArrayList<>();
+        ServicioInternet servicioFiltro= new ServicioInternet();
+        extrasFiltro.add(servicioFiltro);
+        List<Habitacion> habitacionesFiltradas = controllerHabitacion.filtrarHabitaciones(3, TipoHabitacion.HABITACION,extrasFiltro);
+        for (Habitacion h :
+                habitacionesFiltradas) {
+            MostrarHabitacon(h);
+            System.out.println("a");
+        }
+        sc.nextLine();
 
         //Test de los metodos del cliente
 
@@ -92,19 +110,7 @@ public class Test {
         controllerReserva.GenerarFactura(TipoFactura.A,1);
         sc.nextLine();
 
-        //Iniciando Test Habitacion
 
-
-        List<Extra> extrasFiltro = new ArrayList<>();
-        ServicioInternet servicioFiltro= new ServicioInternet();
-        extrasFiltro.add(servicioFiltro);
-        List<Habitacion> habitacionesFiltradas = controllerHabitacion.filtrarHabitaciones(3, TipoHabitacion.HABITACION,extrasFiltro);
-        for (Habitacion h :
-                habitacionesFiltradas) {
-            MostrarHabitacon(h);
-            System.out.println("a");
-        }
-        sc.nextLine();
 
 
     System.out.println("-------------------------------------Fin del programa-------------------------------------");

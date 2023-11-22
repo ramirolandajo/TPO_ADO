@@ -9,4 +9,9 @@ public class ServicioInternet extends Extra{
         idExtra = "1";
         precio = 100;
     }
+
+    @Override
+    public String toString() {
+        return "ServicioInternet";
+    }
 }

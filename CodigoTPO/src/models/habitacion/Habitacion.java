@@ -59,7 +59,12 @@ public class Habitacion {
         }
         return total;
     }
-
+    public void MostrarExtras(){
+        for (Extra e :
+                this.extras) {
+            System.out.println("extra ->" + e.toString() );
+        }
+    }
     public boolean soyEsaHabitacion(String idHabitacion){
         return this.id == idHabitacion;
     }

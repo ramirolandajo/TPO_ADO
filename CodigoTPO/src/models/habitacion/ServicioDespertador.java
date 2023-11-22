@@ -5,4 +5,9 @@ public class ServicioDespertador extends Extra {
         idExtra = "4";
         precio = 50;
     }
+
+    @Override
+    public String toString() {
+        return "ServicioDespertador";
+    }
 }

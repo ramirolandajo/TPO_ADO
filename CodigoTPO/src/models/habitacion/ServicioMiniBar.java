@@ -13,4 +13,8 @@ public class ServicioMiniBar extends Extra {
         precio = 300;
     }
 
+    @Override
+    public String toString() {
+        return "ServicioMiniBar";
+    }
 }

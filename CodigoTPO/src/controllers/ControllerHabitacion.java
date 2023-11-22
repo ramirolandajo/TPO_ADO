@@ -9,9 +9,7 @@ public class ControllerHabitacion {
     private ManejadorDeFiltros manejadorDeFiltros = new ManejadorDeFiltros();
     private static ControllerHabitacion instancia;
     public ControllerHabitacion() {
-        Habitacion h = new HabitacionBuilder("H1",3,TipoHabitacion.HABITACION,200)
-                .asignarServicioInternet().getHabitacion();
-        listadoHabitaciones.add(h);
+
     }
     public static  ControllerHabitacion getInstancia(){
         if (instancia == null){
@@ -43,6 +41,10 @@ public class ControllerHabitacion {
     }
     public List<Habitacion> getListadoHabitaciones() {
         return listadoHabitaciones;
+    }
+    public  Habitacion getHabitacion(String id){
+        Habitacion h = BuscarHabitacion(id);
+        return h;
     }
     Habitacion BuscarHabitacion(String id){
         for (Habitacion h :
