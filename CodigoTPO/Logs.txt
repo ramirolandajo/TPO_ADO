@@ -1,0 +1,3 @@
+Se genero una nueva reserva con id: 1 id de la reserva: 1
+Se actualizo el estado de la reserva a PAGADA id de la reserva: 1
+Se genero una nueva reserva con id: 1 id de la reserva: 1

@@ -8,7 +8,7 @@ public class ManejadorDeFiltros {
         FiltrosHabitacion filtroExtras    = new FiltrarExtras(null);
         FiltrosHabitacion filtroHuespuedes = new FiltroCantidadHuespedes(filtroExtras);
         FiltrosHabitacion filtroTipoHab    = new FiltroTipoHabitacion(filtroHuespuedes);
-        this.primerFiltro = filtroHuespuedes;
+        this.primerFiltro = filtroTipoHab;
     }
 
     public List<Habitacion> filtrarHabitacion(int cantidad, TipoHabitacion tipo,List<Extra> extra,List<Habitacion> habitaciones){

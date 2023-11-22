@@ -12,6 +12,7 @@ public class FiltroCantidadHuespedes extends FiltrosHabitacion {
             for (Habitacion h:habitaciones) {
                 if(cantidad>=h.getPersonas())
                     encontradas.add(h);
+                System.out.println("cantidad");
             }
         }
         if(siguienteFiltro!=null)

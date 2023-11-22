@@ -16,6 +16,7 @@ public class FiltrarExtras extends FiltrosHabitacion{
                 for(Extra e : extra){
                     if(!h.getExtras().contains(e))
                         filtroExtras = false;
+                    System.out.println("extras");
                 }
                 if(filtroExtras)
                     encontradas.add(h);

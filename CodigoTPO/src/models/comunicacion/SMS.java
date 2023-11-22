@@ -1,13 +1,15 @@
 package models.comunicacion;
 
 import models.Observer;
+import models.reserva.Reserva;
 
 import java.util.List;
 
 public class SMS implements MedioDeComunicacion, Observer {
     private List<String> notificaciones;
+
     @Override
-    public void actualizar(String mensaje) {
+    public void actualizar(String mensaje, Reserva reserva) {
         enviarMensaje(mensaje);
     }
 

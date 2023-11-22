@@ -14,6 +14,7 @@ public class FiltroTipoHabitacion extends FiltrosHabitacion {
                 if(h.getTipo()==tipo){
                     encontradas.add(h);
                 }
+                System.out.println("tipo");
             }
         }
         if(siguienteFiltro!=null)
