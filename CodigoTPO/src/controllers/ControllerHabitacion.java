@@ -20,6 +20,24 @@ public class ControllerHabitacion {
             return instancia;
         }
     }
+    public void crearHabitacion(String id,int personas,TipoHabitacion tipoHabitacion,float precio,List<Extra>extras){
+        HabitacionBuilder h = new HabitacionBuilder(id,personas,tipoHabitacion,precio);
+
+        for (Extra e:extras) {
+            if(e instanceof ServicioInternet){
+                h.asignarServicioInternet();
+            }else if(e instanceof ServicioDespertador){
+                h.asignarServicioDespertador();
+            } else if (e instanceof  ServicioTv) {
+                h.asignarServicioTv();
+            } else if (e instanceof  ServicioMiniBar) {
+                h.asignarServicioMinibar();
+            }
+        }
+
+        listadoHabitaciones.add(h.getHabitacion());
+    }
+
     public List<Habitacion> filtrarHabitaciones(int cantidad, TipoHabitacion tipo, List<Extra> extra){
         return manejadorDeFiltros.filtrarHabitacion(cantidad,tipo,extra,listadoHabitaciones);
     }
