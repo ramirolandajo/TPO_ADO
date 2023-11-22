@@ -28,8 +28,9 @@ public class ControllerReserva {
     }
     public void CrearReserva(Habitacion habitacion, Cliente cliente,
                              LocalDate fechaRealizacion, LocalDate fehcaIngreso, LocalDate fechaSalida){
+
         Reserva r = new Reserva(1,habitacion,cliente,fechaRealizacion,fehcaIngreso,fechaSalida);
-        r.notificar("Se actualizo el estado de la reserva a " + r.getEstadoReserva());
+        r.notificar("Se genero una nueva reserva con id: " + r.getIdReserva(),r);
         cliente.setReserva(r);
         listadoReservas.add(r);
         System.out.println("Se creo la reserva con id: " + r.getIdReserva());

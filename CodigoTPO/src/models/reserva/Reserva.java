@@ -40,9 +40,9 @@ public class Reserva extends Sujeto {
         observers.add(new Log());
     }
 
-    public void notificar(String mensaje) {
+    public void notificar(String mensaje, Reserva reserva) {
         for(Observer ob : observers){
-            ob.actualizar(mensaje);
+            ob.actualizar(mensaje, reserva);
         }
     }
     public void agregarObservador(Observer observer) {
@@ -66,9 +66,8 @@ public class Reserva extends Sujeto {
         }
     }
     public void actualizarEstado(Estado estado) {
-
         this.estadoReserva = estado;
-        this.notificar("Se actualizo el estado de la reserva a " + estado);
+        this.notificar("Se actualizo el estado de la reserva a " + estado, this);
     }
     public float calcularTotal() {
         this.total += this.habitacion.obtenerTotalExtras();

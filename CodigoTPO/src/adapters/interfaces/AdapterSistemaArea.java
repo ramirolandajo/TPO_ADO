@@ -1,7 +1,9 @@
 package adapters.interfaces;
 
+import models.reserva.Reserva;
+
 public interface AdapterSistemaArea {
 
-    void adaptar();
+    void procesarInformacion(String informacion);
 
 }
